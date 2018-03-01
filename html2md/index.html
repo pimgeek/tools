@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body style="text-align:center;margin:0 auto;">
+    <p class="lead">把 HTML 源码填写在左侧编辑区，Markdown 源码将立刻显示在右侧 - We &hearts; <b>Europa</b>!</p>
+
+    <textarea id="html" style="width:400px;height:500px;margin-right:20px;" ></textarea>
+    <textarea id="markdown" style="width:400px;height:500px;" ></textarea>
+
+    <script src="europa.min.js"></script>
+    <script>
+      (function() {
+        var europa = new Europa();
+        var html = document.getElementById('html');
+        var markdown = document.getElementById('markdown');
+
+        html.addEventListener('input', function() {
+          markdown.value = europa.convert(html.value);
+        });
+      }());
+    </script>
+  </body>
+</html>
