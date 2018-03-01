@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body style="text-align:center;margin:0 auto;">
+      <h1>把词根词缀说明粘贴在左侧编辑区<br />可导入 Quizlet 的文本内容将立刻显示在右侧</h1>
+    <h2>例如</h2>
+    <div style="max-width:50%;padding:15px;background-color:silver;text-align:center;margin:0 auto;" />
+        <pre style="text-align:left;overflow-x:scroll;" >
+postpone [pəust'pəun, pə'sp-] [post-后,pone 放;’往后放”] 推后,推
+迟,延期
+antepone [ante-前,pon 放;’往前放”] 移前
+        </pre>
+        <p>在左侧输入以上内容，将会在右侧生成以下内容：</p>
+        <pre style="text-align:left;overflow-x:scroll;" >
+postpone|*推后，推迟，延期*
+（post-后，pone 放；“往后放”）##
+antepone|移前
+        </pre>
+    </div>
+    <hr />
+    <textarea id="web_text" style="width:400px;height:500px;margin-right:20px;" ></textarea>
+    <textarea id="quizlet_csv" style="width:400px;height:500px;" ></textarea>
+
+    <script src="conv.js"></script>
+    <script>
+      (function() {
+        var web_text_box = document.getElementById('web_text');
+        var quizlet_csv_box = document.getElementById('quizlet_csv');
+        web_text.addEventListener('input', function() {
+          quizlet_csv_box.value = text2QuizletCsv(web_text_box.value);
+        });
+      }());
+    </script>
+    <h2>如有改进建议，<a href="http://wpa.qq.com/msgrd?v=3&uin=66034278&site=qq&menu=yes">请点此处联系 pimgeek</a>。 </h2>
+  </body>
+</html>
